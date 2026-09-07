@@ -252,9 +252,7 @@ with season_tab:
         "regions of different sizes to be compared on the same scale."
     )
     st.info(
-        "**Key take-away:** South Island spending shows stronger "
-        "seasonality, with a sharper summer peak and deeper winter "
-        "trough than the North Island."
+        "**Key take-away:** Tourism spending is more seasonal in the South Island, ranging from 26% above average in December to 27% below average in June. The North Island varies less, from 21% above to 13% below average."
     )
     level = st.radio("Analysis level", ["Island", "RTO"], horizontal=True)
     season_view = seasonality.loc[seasonality["AnalysisLevel"] == level].copy()
@@ -362,7 +360,7 @@ with risk_tab:
         "of spending concentrated in each RTO's top three months."
     )
     st.info(
-        "**Key takeaway:** Exposure to shocks is concentrated in the South Island, which holds 8 of the 10 most vulnerable RTOs."
+        "**Key take-away:** Exposure to shocks is concentrated in the South Island, which holds 8 of the 10 most vulnerable RTOs."
     )
     count = st.slider(
         "RTOs to display", 5, max(5, len(vulnerability_view)),
