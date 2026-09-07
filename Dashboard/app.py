@@ -252,7 +252,7 @@ with season_tab:
         "regions of different sizes to be compared on the same scale."
     )
     st.info(
-        "**Key takeaway:** South Island spending shows stronger "
+        "**Key take-away:** South Island spending shows stronger "
         "seasonality, with a sharper summer peak and deeper winter "
         "trough than the North Island."
     )
@@ -309,7 +309,7 @@ with buffer_tab:
         "numbers were below that RTO's own average."
     )
     st.info(
-        "**Key takeaway:** Domestic tourism could not serve as a buffer because domestic visitor numbers and spending decline in almost every RTO when international demand weakens, except for Ruapehu, where domestic spending more than doubles even as domestic visitors decline."
+        "**Key take-away:** Domestic tourism could not serve as a buffer because domestic visitor numbers and spending decline in almost every RTO when international demand weakens, except for Ruapehu, where domestic spending more than doubles even as domestic visitors decline."
     )
     buffer_chart = buffer_view.dropna(
         subset=["VisitorDiffPct", "SpendDiffPct"]
@@ -326,8 +326,8 @@ with buffer_tab:
         size="LowDemandMonths", size_max=18, color_discrete_map=ISLAND_COLOURS,
         template="plotly_white", hover_name="RTOName",
         labels={
-            "VisitorDiffPct": "Change in domestic visitors volumns (%)",
-            "SpendDiffPct": "Change in domestic spending ($)",
+            "VisitorDiffPct": "Change in domestic visitors volume (%)",
+            "SpendDiffPct": "Change in domestic spending (%)",
             "LowDemandMonths": "Low-demand months",
         },
         hover_data={
