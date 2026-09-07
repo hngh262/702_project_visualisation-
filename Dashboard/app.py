@@ -308,6 +308,9 @@ with buffer_tab:
         "Each point compares domestic activity in months when international visitor "
         "numbers were below that RTO's own average."
     )
+    st.info(
+        "**Key takeaway:** Domestic tourism could not serve as a buffer because domestic visitor numbers and spending decline in almost every RTO when international demand weakens, except for Ruapehu, where domestic spending more than doubles even as domestic visitors decline."
+    )
     buffer_chart = buffer_view.dropna(
         subset=["VisitorDiffPct", "SpendDiffPct"]
     ).copy()
@@ -323,8 +326,8 @@ with buffer_tab:
         size="LowDemandMonths", size_max=18, color_discrete_map=ISLAND_COLOURS,
         template="plotly_white", hover_name="RTOName",
         labels={
-            "VisitorDiffPct": "Change in domestic visitors (%)",
-            "SpendDiffPct": "Change in domestic spending (%)",
+            "VisitorDiffPct": "Change in domestic visitors volumns (%)",
+            "SpendDiffPct": "Change in domestic spending ($)",
             "LowDemandMonths": "Low-demand months",
         },
         hover_data={
@@ -357,6 +360,9 @@ with risk_tab:
     st.write(
         "The score equally weights international spending dependence and the share "
         "of spending concentrated in each RTO's top three months."
+    )
+    st.info(
+        "**Key takeaway:** Exposure to shocks is concentrated in the South Island, which holds 8 of the 10 most vulnerable RTOs."
     )
     count = st.slider(
         "RTOs to display", 5, max(5, len(vulnerability_view)),
