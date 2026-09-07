@@ -213,6 +213,37 @@ with overview_tab:
     overview_fig.update_xaxes(rangemode="tozero")
     st.plotly_chart(overview_fig, use_container_width=True)
 
+with method_tab:
+    st.subheader("Methodology and responsible interpretation")
+    st.markdown(
+        """
+        **Warehouse grain**  
+        One fact row represents one **month × RTO × visitor type** combination.
+
+        **Seasonality index**  
+        Monthly spending divided by the area's own average monthly spending, × 100.
+
+        **Low international demand**  
+        International visitor count below that RTO's own 2024–2025 monthly average.
+
+        **Vulnerability score**  
+        Equal-weight average of international spending share and top-three-month
+        spending concentration.
+
+        **Limitations**  
+        Results show associations, not causation. Visitor counts are not additive
+        across RTOs. Missing and suppressed observations remain null, not zero.
+        """
+    )
+    st.markdown("#### Data sources")
+    st.markdown(
+        """
+        - MBIE Monthly Regional Tourism Estimates (MRTE)
+        - MBIE Accommodation Data Programme (ADP)
+        - MBIE Tourism Volumes and Flows (TV&F)
+        - Stats NZ Regional Tourism Organisation Areas 2025
+        """
+    )
 
 with season_tab:
     st.subheader("RQ1 · When does tourism spending rise and fall?")
@@ -361,37 +392,7 @@ with risk_tab:
         )
 
 
-with method_tab:
-    st.subheader("Methodology and responsible interpretation")
-    st.markdown(
-        """
-        **Warehouse grain**  
-        One fact row represents one **month × RTO × visitor type** combination.
 
-        **Seasonality index**  
-        Monthly spending divided by the area's own average monthly spending, × 100.
-
-        **Low international demand**  
-        International visitor count below that RTO's own 2024–2025 monthly average.
-
-        **Vulnerability score**  
-        Equal-weight average of international spending share and top-three-month
-        spending concentration.
-
-        **Limitations**  
-        Results show associations, not causation. Visitor counts are not additive
-        across RTOs. Missing and suppressed observations remain null, not zero.
-        """
-    )
-    st.markdown("#### Data sources")
-    st.markdown(
-        """
-        - MBIE Monthly Regional Tourism Estimates (MRTE)
-        - MBIE Accommodation Data Programme (ADP)
-        - MBIE Tourism Volumes and Flows (TV&F)
-        - Stats NZ Regional Tourism Organisation Areas 2025
-        """
-    )
 
 st.divider()
 st.caption(
