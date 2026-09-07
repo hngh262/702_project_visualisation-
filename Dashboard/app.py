@@ -275,7 +275,7 @@ with season_tab:
     else:
         season_fig = px.line(
             season_chart,
-            x="MonthName", y="SeasonalityIndex", color="RTO_or_Island", markers=True,
+            x="Spending index (average month = 100)", y="SeasonalityIndex", color="RTO_or_Island", markers=True,
             category_orders={"MonthName": MONTHS}, template="plotly_white",
             labels={
                 "MonthName": "Month", "SeasonalityIndex": "Seasonality index",
