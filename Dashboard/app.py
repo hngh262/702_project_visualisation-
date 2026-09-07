@@ -171,7 +171,7 @@ kpi4.metric(
 
 st.divider()
 overview_tab, season_tab, buffer_tab, risk_tab, method_tab = st.tabs(
-    ["Overview", "Seasonality", "Domestic buffer", "Vulnerability", "Methodology"]
+    ["Overview", "Methodology", "RQ1. Seasonality", "RQ2. Domestic buffer", "RQ3. Vulnerability"]
 )
 
 
@@ -246,10 +246,10 @@ with method_tab:
     )
 
 with season_tab:
-    st.subheader("RQ1 · When does tourism spending rise and fall?")
+    st.subheader("RQ1 · How does tourism spending seasonality vary across RTOs and islands?")
     st.write(
-        "Monthly spending is compared with each area's own average, allowing "
-        "differently sized destinations to be compared fairly."
+        "Each month's spending is indexed against the area's average month (100), allowing "
+        "regions of different sizes to be compared on the same scale."
     )
     level = st.radio("Analysis level", ["Island", "RTO"], horizontal=True)
     season_view = seasonality.loc[seasonality["AnalysisLevel"] == level].copy()
