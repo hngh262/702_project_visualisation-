@@ -170,7 +170,7 @@ kpi4.metric(
 )
 
 st.divider()
-overview_tab, season_tab, buffer_tab, risk_tab, method_tab = st.tabs(
+overview_tab,method_tab, season_tab, buffer_tab, risk_tab = st.tabs(
     ["Overview", "Methodology", "RQ1. Seasonality", "RQ2. Domestic buffer", "RQ3. Vulnerability"]
 )
 
@@ -250,6 +250,11 @@ with season_tab:
     st.write(
         "Each month's spending is indexed against the area's average month (100), allowing "
         "regions of different sizes to be compared on the same scale."
+    )
+    st.info(
+        "**Key takeaway:** South Island spending shows stronger "
+        "seasonality, with a sharper summer peak and deeper winter "
+        "trough than the North Island."
     )
     level = st.radio("Analysis level", ["Island", "RTO"], horizontal=True)
     season_view = seasonality.loc[seasonality["AnalysisLevel"] == level].copy()
