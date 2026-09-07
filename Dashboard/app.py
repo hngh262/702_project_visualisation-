@@ -117,7 +117,7 @@ with st.sidebar:
             """
             - Blue represents the North Island.
             - Orange represents the South Island.
-            - A seasonality index of 100 is an average month.
+            - A seasonality index of 100 is a Normalized Monthly Index.
             - Vulnerability is an exploratory project measure.
             """
         )
@@ -249,7 +249,7 @@ with season_tab:
         )
         season_fig.add_hline(
             y=100, line_dash="dash", line_color=NEUTRAL,
-            annotation_text="Average month = 100", annotation_position="top left",
+            annotation_text="Normalized Monthly Index (Index = 100)", annotation_position="top left",
         )
         season_fig.update_layout(
             height=560, margin=dict(l=20, r=20, t=30, b=20),
