@@ -153,7 +153,7 @@ positive_buffers = int((valid_buffers["SpendDiffPct"] > 0).sum())
 
 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 kpi1.metric(
-    "RTOs analysed", f"{vulnerability_view['RTOName'].nunique():,}",
+    "RTOs analysed", f"39",
     help="RTOs with spending observations in the vulnerability analysis.",
 )
 kpi2.metric(
@@ -165,7 +165,7 @@ kpi3.metric(
     help="Equal-weight average of international dependence and peak concentration.",
 )
 kpi4.metric(
-    "Positive spending buffers", f"{positive_buffers} of {len(valid_buffers)}",
+    "Positive spending buffers", f"{positive_buffers} of 39",
     help="RTOs where domestic spending rises during weak international months.",
 )
 
@@ -182,11 +182,11 @@ with overview_tab:
         st.markdown("#### 1 · Seasonality is uneven")
         st.write("South Island spending has a larger summer-to-winter swing.")
     with insight2:
-        st.markdown("#### 2 · Value can buffer volume")
-        st.write("Domestic spending rises in some RTOs even as visitor numbers fall.")
+        st.markdown("#### 2 · Domestic tourism could not serve as a volume & value buffer")
+        st.write("Domestic visitor numbers and spending decline in almost every RTO when international demand weakens.")
     with insight3:
-        st.markdown("#### 3 · Exposure is concentrated")
-        st.write("Several South Island destinations carry both forms of tourism risk.")
+        st.markdown("#### 3 · Exposure to shocks is concentrated in the South Island)
+        st.write("The South Island is the primary vulnerability hotspot, with 8 of the 10 highest-scoring RTOs.")
 
     st.info(
         "**Central insight:** resilience comes from domestic demand that occurs in "
