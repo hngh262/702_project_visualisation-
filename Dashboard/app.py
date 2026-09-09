@@ -185,7 +185,7 @@ with overview_tab:
         st.markdown("#### 2 · Domestic tourism could not serve as a volume & value buffer")
         st.write("Domestic visitor numbers and spending decline in almost every RTO when international demand weakens.")
     with insight3:
-        st.markdown("#### 3 · Exposure to shocks is concentrated in the South Island)
+        st.markdown("#### 3 · Exposure to shocks is concentrated in the South Island")
         st.write("The South Island is the primary vulnerability hotspot, with 8 of the 10 highest-scoring RTOs.")
 
     st.info(
